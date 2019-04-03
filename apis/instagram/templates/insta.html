@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <img class="rounded-circle" src={{ prof.data.profile_picture }}>
+        <div class="row">
+            <div class="col-4">
+                {{ prof.data.username }}
+            </div>
+            <div class="col-4 text-center">
+                Post:{{ prof.data.counts.media }}
+            </div>
+            <div class="col-4" >
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for post in post.data %}
+                <div class="col-4">
+                    <img class="rounded w-100 m-2 " src={{post.images.thumbnail.url}}>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
